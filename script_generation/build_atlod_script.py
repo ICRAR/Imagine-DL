@@ -65,7 +65,12 @@ class BuildScript(object):
 
         LOG.info('Creating {0}'.format(file_name))
         output_file = open(file_name, 'w')
-        output_file.write('''
+        output_file.write('''#!/bin/bash
+source /usr/local/miriad/MIRRC.sh
+export PATH=$PATH:$HOME/bin:$MIRBIN
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/gupc/lib64
+
 atlod in={0} out={1} ifsel=1 restfreq=1.420405752 options=bary,birdie,rfiflag,noauto edge=0  
 uvsplit vis={1} options=mosaic      
 '''.format(input_file_name, out_file_name))
