@@ -1,0 +1,10 @@
+astroplan
+astropy
+keras
+matplotlib
+numpy
+pandas
+pip
+scikit-learn
+scipy
+setuptools
