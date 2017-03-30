@@ -74,6 +74,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/gupc/lib64
 atlod in={0} out={1} ifsel=1 restfreq=1.420405752 options=bary,birdie,rfiflag,noauto edge=0  
 uvsplit vis={1} options=mosaic      
 '''.format(input_file_name, out_file_name))
+        output_file.close()
 
 
 def parse_args():
