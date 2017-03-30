@@ -7,4 +7,4 @@
 #PBS -j oe
 
 cd /scratch/kevin/imagine/`printf %06d ${PBS_ARRAYID}`
-bash casa_script.sh
+bash casa_script.bash
