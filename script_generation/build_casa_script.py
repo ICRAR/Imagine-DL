@@ -49,7 +49,7 @@ class BuildScript(object):
                 casa_file = os.path.join(full_path, 'casa_script.py')
                 output_file = open(os.path.join(full_path, 'casa_script.bash'), 'w')
                 output_file.write('''
-casa --nologger --log2term -c {0}                
+/usr/local/bin/casa --nologger --log2term -c {0}                
 '''.format(casa_file))
                 output_file.close()
 
