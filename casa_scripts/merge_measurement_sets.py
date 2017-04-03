@@ -32,6 +32,7 @@ LOG = logging.getLogger('merge_measurement_sets')
 
 list_measurement_sets = []
 for file_name in glob.glob('/scratch/kevin/imagine/*'):
+    LOG.info('Looking at {0}'.format(file_name))
     if file_name.endswith('.ms'):
         list_measurement_sets.append(file_name)
         LOG.info('Adding {0}'.format(file_name))
