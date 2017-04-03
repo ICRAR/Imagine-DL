@@ -31,11 +31,9 @@ logging.info('Starting logger for...')
 LOG = logging.getLogger('merge_measurement_sets')
 
 list_measurement_sets = []
-for file_name in glob.glob('/scratch/kevin/imagine/*'):
-    LOG.info('Looking at {0}'.format(file_name))
-    if file_name.endswith('.ms'):
-        list_measurement_sets.append(file_name)
-        LOG.info('Adding {0}'.format(file_name))
+for file_name in glob.glob('/scratch/kevin/imagine/*/*.ms'):
+    list_measurement_sets.append(file_name)
+    LOG.info('Adding {0}'.format(file_name))
 
 LOG.info('List = {0}'.format(list_measurement_sets))
-concat(list_measurement_sets, '/scratch/kevin/imagine/final.ms', timesort=False, copypointing=True)
+concat(list_measurement_sets, '/scratch/kevin/imagine/final.ms', timesort=True, copypointing=True)
