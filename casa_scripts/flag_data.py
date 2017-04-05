@@ -27,7 +27,6 @@ import glob
 casalog.filter('DEBUGGING')
 
 for file_name in glob.glob('/scratch/kevin/imagine/*/*.ms'):
-    casalog.info('Flagging {0}'.format(file_name))
     flagdata( vis=file_name, mode='manual', autocorr=True )
     flagdata( vis=file_name, mode='shadow', flagbackup=False )
     flagdata( vis=file_name, mode='rflag', datacolumn='data', ntime='30s')
