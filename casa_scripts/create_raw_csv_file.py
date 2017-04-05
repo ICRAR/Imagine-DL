@@ -28,7 +28,7 @@ import os
 
 casalog.filter('DEBUGGING')
 
-for file_name in glob.glob('/scratch/kevin/imagine/*/*.ms'):
+for file_name in glob.glob('*.ms'):
     ms.open(file_name)
     data = ms.getdata(["amplitude", "axis_info", "ha", "flag"], ifraxis=True)
     ms.close()
