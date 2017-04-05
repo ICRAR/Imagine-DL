@@ -8,4 +8,5 @@
 #SBATCH --ntasks-per-node=5
 
 cd /scratch/kevin/imagine/`printf %06d ${SLURM_ARRAY_TASK_ID}`
+/usr/local/bin/casa --nologger --log2term -c /home/kevin/Imagine-DL/casa_scripts/flag_data.py
 /usr/local/bin/casa --nologger --log2term -c /home/kevin/Imagine-DL/casa_scripts/create_raw_csv_file.py

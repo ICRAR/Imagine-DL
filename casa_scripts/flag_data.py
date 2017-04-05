@@ -26,9 +26,8 @@ import glob
 
 casalog.filter('DEBUGGING')
 
-for file_name in glob.glob('/scratch/kevin/imagine/*/*.ms'):
-    flagdata( vis=file_name, mode='manual', autocorr=True )
-    flagdata( vis=file_name, mode='shadow', flagbackup=False )
+for file_name in glob.glob('*.ms'):
+    flagdata( vis=file_name, mode='manual', autocorr=True)
+    flagdata( vis=file_name, mode='shadow', flagbackup=False)
     flagdata( vis=file_name, mode='rflag', datacolumn='data', ntime='30s')
-    flagdata( vis=file_name, mode='tfcrop', datacolumn='data', timecutoff=5, freqcutoff=4 )
-
+    flagdata( vis=file_name, mode='tfcrop', datacolumn='data', timecutoff=5, freqcutoff=4)
