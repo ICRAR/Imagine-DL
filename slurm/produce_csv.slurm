@@ -2,10 +2,8 @@
 # SLURM directives
 #
 #SBATCH --job-name=produce-csv
-#SBATCH --array=0-30
-#SBATCH --ntasks=5
+#SBATCH --array=0-961
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=5
 
 cd /scratch/kevin/imagine/`printf %06d ${SLURM_ARRAY_TASK_ID}`
 /usr/local/bin/casa --nologger --log2term -c /home/kevin/Imagine-DL/casa_scripts/flag_data.py
